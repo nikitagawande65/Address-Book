@@ -1,0 +1,43 @@
+<div *ngIf="data">
+  <table class="datatable">
+    <thead>
+      <th>
+        <input
+          type="checkbox"
+          [checked]="isAllChecked()"
+          (change)="onMainChechedChange($event)"
+        />
+      </th>
+      <th *ngFor="let col of column" (click)="onColumnClick(col)">{{ col }}</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data; let i = index">
+        <td>
+          <input
+            type="checkbox"
+            value="{{ item.ID }}"
+            (change)="onChechedChange(item.ID)"
+            [(ngModel)]="item.checked"
+          />
+        </td>
+        <td [attr.contenteditable]="item.isEditable">{{ item.ID }}</td>
+        <td [attr.contenteditable]="item.isEditable">{{ item.Name }}</td>
+        <td [attr.contenteditable]="item.isEditable">{{ item.Location }}</td>
+        <td
+          [attr.contenteditable]="item.isEditable || isDblClick"
+          #phone
+          (dblclick)="isDblClick = true"
+        >
+          {{ item.Phone }}
+        </td>
+        <td [attr.contenteditable]="item.isEditable">{{ item.Date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="buttons">
+  <button type="button" (click)="onDelete()">Delete</button>
+  <button type="button" (click)="onUpdate()">Update</button>
+  <button type="button" (click)="onAdd()">Add</button>
+</div>

@@ -1,0 +1,47 @@
+table.datatable {
+  width: 100%;
+}
+table.datatable th {
+  text-align: left;
+  font-size: 18px;
+  padding: 15px 0px 15px 8px;
+  background-color: lightgray;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+table.datatable td {
+  text-align: center;
+  border: 1px solid black;
+  padding: 7px;
+}
+table.datatable th:last-child,
+table.datatable th:first-child {
+  text-align: center;
+  padding-left: 0;
+}
+.buttons {
+  display: flex;
+  margin-top: 50px;
+  float: right;
+}
+button {
+  border-radius: 50px;
+  right: 100%;
+  padding: 10px 30px;
+  margin-right: 30px;
+  font-size: 16px;
+  border: 2px solid grey;
+  cursor: pointer;
+}
+button:last-child {
+  margin-right: 0;
+}
